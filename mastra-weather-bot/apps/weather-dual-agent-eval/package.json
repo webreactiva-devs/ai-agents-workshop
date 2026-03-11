@@ -1,0 +1,26 @@
+{
+  "name": "weather-dual-agent-eval",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=../../.env ../../node_modules/mastra/dist/index.js dev",
+    "build": "node --env-file=../../.env ../../node_modules/mastra/dist/index.js build",
+    "start": "node --env-file=../../.env ../../node_modules/mastra/dist/index.js start",
+    "check": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@agents-mastra/weather-common": "*",
+    "@mastra/core": "latest",
+    "@mastra/libsql": "latest",
+    "@mastra/loggers": "latest",
+    "@mastra/memory": "latest",
+    "@mastra/observability": "latest",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "mastra": "latest",
+    "typescript": "^5.9.3"
+  }
+}

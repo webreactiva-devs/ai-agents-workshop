@@ -1,0 +1,6 @@
+{"timestamp":"2026-03-09T08:33:48.490Z","toolId":"get-weather-by-city","phase":"call","locationName":"Valladolid, Spain","hoursAhead":12}
+{"timestamp":"2026-03-09T08:33:48.491Z","toolId":"get-weather-by-city","phase":"result","step":"location-resolved","resolved":"Valladolid, Spain","lat":40.4168,"lon":-3.7038}
+{"timestamp":"2026-03-09T08:33:48.739Z","toolId":"get-weather-by-city","phase":"result","step":"weather-fetched","temperatureC":7.2,"precipitationProbability":13}
+{"timestamp":"2026-03-09T08:54:56.499Z","toolId":"get-weather-by-city","phase":"call","locationName":"Valladolid","hoursAhead":24}
+{"timestamp":"2026-03-09T08:54:56.501Z","toolId":"get-weather-by-city","phase":"result","step":"location-resolved","resolved":"Valladolid","lat":40.4168,"lon":-3.7038}
+{"timestamp":"2026-03-09T08:54:56.728Z","toolId":"get-weather-by-city","phase":"result","step":"weather-fetched","temperatureC":7.2,"precipitationProbability":13}

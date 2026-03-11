@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mastra Scouter</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <p class="eyebrow">Mastra Scout</p>
+          <h1>Rastreo de ejecuciones</h1>
+          <p class="lede">Selecciona un chatbot y navega el árbol real de spans desde la pregunta hasta la respuesta.</p>
+        </div>
+        <section class="panel">
+          <div class="panel-title-row">
+            <h2>Chatbots</h2>
+            <button id="refresh-projects" class="ghost-button">Actualizar</button>
+          </div>
+          <div id="project-list" class="project-list"></div>
+        </section>
+      </aside>
+
+      <main class="main-stage">
+        <section class="topbar">
+          <div>
+            <p class="eyebrow">Explorador</p>
+            <h2 id="selection-title">Carga un proyecto</h2>
+          </div>
+          <div class="legend">
+            <span><i class="dot dot-agent"></i> Agente</span>
+            <span><i class="dot dot-model"></i> Modelo</span>
+            <span><i class="dot dot-tool"></i> Tool</span>
+            <span><i class="dot dot-workflow"></i> Workflow</span>
+            <span><i class="dot dot-chunk"></i> Chunk</span>
+          </div>
+        </section>
+
+        <section class="panel trace-panel">
+          <div class="panel-title-row">
+            <h2>Runs</h2>
+            <span id="trace-count" class="meta-pill">0</span>
+          </div>
+          <div id="trace-list" class="trace-list empty-state">Elige un chatbot para cargar sus traces.</div>
+          <div id="memory-section" class="memory-section" style="display:none">
+            <div class="panel-title-row">
+              <h2>Working Memory</h2>
+              <button id="refresh-memory" class="ghost-button">Actualizar</button>
+            </div>
+            <div id="memory-list"></div>
+          </div>
+        </section>
+
+        <section class="panel detail-panel">
+          <div id="detail-summary" class="detail-summary empty-state">
+            El visor mostrará aquí el flujo completo, los previews de entrada/salida y cualquier snapshot de workflow persistido.
+          </div>
+          <div id="workflow-list" class="workflow-list"></div>
+          <div id="span-tree" class="span-tree"></div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+  </html>

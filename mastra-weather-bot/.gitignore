@@ -1,0 +1,39 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Mastra
+.mastra/
+
+# SQLite databases
+*.db
+*.db-wal
+*.db-shm
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Turbo / cache
+.turbo/
+.cache/

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Diagrama de secuencia — Mastra Scouter</title>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'base',
+        themeVariables: {
+          actorBkg: '#f5f0e7',
+          actorBorder: '#0d6f73',
+          actorTextColor: '#251f1c',
+          signalColor: '#251f1c',
+          signalTextColor: '#251f1c',
+          labelBoxBkgColor: '#fff8ee',
+          labelBoxBorderColor: '#0d6f73',
+          labelTextColor: '#251f1c',
+          loopTextColor: '#251f1c',
+          noteBkgColor: '#fff4ec',
+          noteBorderColor: '#c95a20',
+          noteTextColor: '#251f1c',
+          activationBkgColor: '#e8f0ff',
+          activationBorderColor: '#0047ab',
+          sequenceNumberColor: '#fff',
+          fontFamily: '"SF Mono", "Fira Code", monospace',
+          fontSize: '13px',
+        },
+        sequence: { mirrorActors: false, showSequenceNumbers: true, width: 280, noteMargin: 12, wrap: true },
+      });
+
+      const params = new URLSearchParams(location.search);
+      const project = params.get('project');
+      const traceId = params.get('trace');
+      const title = document.getElementById('title');
+      const container = document.getElementById('diagram');
+      const errorBox = document.getElementById('error');
+
+      if (!project || !traceId) {
+        errorBox.textContent = 'Faltan los parametros project y trace en la URL.';
+      } else {
+        title.textContent = `${project} — trace ${traceId.slice(0, 12)}…`;
+        try {
+          const res = await fetch(`/api/projects/${project}/traces/${traceId}`);
+          const payload = await res.json();
+          if (!res.ok) throw new Error(payload.error || 'Error cargando trace');
+
+          const definition = buildSequence(payload.trace);
+          const { svg } = await mermaid.render('mermaid-output', definition);
+          container.innerHTML = svg;
+        } catch (err) {
+          errorBox.textContent = err.message;
+        }
+      }
+
+      function sanitize(text) {
+        return text.replace(/["\[\](){}|<>#&;]/g, ' ').replace(/\s+/g, ' ').trim();
+      }
+
+      function wrapNote(text, maxLen) {
+        const trimmed = text.length > maxLen ? text.slice(0, maxLen) + '...' : text;
+        // Break into ~45 char lines at word boundaries for Mermaid note wrapping
+        const words = trimmed.split(' ');
+        const lines = [];
+        let line = '';
+        for (const word of words) {
+          if (line.length + word.length + 1 > 45 && line) {
+            lines.push(line);
+            line = word;
+          } else {
+            line = line ? line + ' ' + word : word;
+          }
+        }
+        if (line) lines.push(line);
+        return lines.join('<br/>');
+      }
+
+      function participantId(spanType, name) {
+        if (spanType.includes('agent')) return 'Agent';
+        if (spanType.includes('workflow')) return 'Workflow';
+        if (spanType.includes('model') && !spanType.includes('chunk')) return 'LLM';
+        if (spanType.includes('tool')) {
+          const clean = name.replace(/Tool$/i, '').replace(/[^a-zA-Z0-9]/g, '');
+          return `Tool_${clean}`;
+        }
+        return 'Agent';
+      }
+
+      function participantLabel(id) {
+        if (id === 'Agent') return 'Agente';
+        if (id === 'LLM') return 'LLM';
+        if (id === 'Workflow') return 'Workflow';
+        if (id.startsWith('Tool_')) return id.replace('Tool_', '');
+        return id;
+      }
+
+      function buildSequence(trace) {
+        const lines = ['sequenceDiagram'];
+        const participants = new Map();
+        const messages = [];
+
+        // Collect all participants and messages by walking the span tree
+        function walk(spans, callerType) {
+          for (const span of spans) {
+            const target = participantId(span.spanType, span.name);
+            if (!participants.has(target)) {
+              participants.set(target, participantLabel(target));
+            }
+
+            const caller = callerType || 'User';
+            const duration = span.durationMs != null ? ` ${span.durationMs}ms` : '';
+
+            // Skip chunk spans (too noisy)
+            if (span.spanType.includes('chunk')) {
+              continue;
+            }
+
+            // Request arrow
+            messages.push({ from: caller, to: target, label: sanitize(span.name) + duration, type: 'request' });
+
+            // Recurse into children
+            if (span.children && span.children.length > 0) {
+              walk(span.children, target);
+            }
+
+            // Response arrow (dashed) back to caller
+            if (caller !== target) {
+              const responseLabel = span.spanType.includes('tool') ? 'resultado' :
+                                    span.spanType.includes('model') ? 'respuesta' : 'ok';
+              messages.push({ from: target, to: caller, label: responseLabel, type: 'response' });
+            }
+          }
+        }
+
+        walk(trace.spans, null);
+
+        // Declare participants in order: User first, then discovered order
+        lines.push('    participant User as Usuario');
+        for (const [id, label] of participants) {
+          lines.push(`    participant ${id} as ${label}`);
+        }
+
+        // Add note with the user question
+        if (trace.userInputPreview) {
+          lines.push(`    Note right of User: ${wrapNote(sanitize(trace.userInputPreview), 200)}`);
+        }
+
+        // Emit messages
+        for (const msg of messages) {
+          if (msg.type === 'request') {
+            lines.push(`    ${msg.from}->>+${msg.to}: ${msg.label}`);
+          } else {
+            lines.push(`    ${msg.from}-->>-${msg.to}: ${msg.label}`);
+          }
+        }
+
+        // Final note with the agent response
+        if (trace.finalOutputPreview) {
+          lines.push(`    Note left of User: ${wrapNote(sanitize(trace.finalOutputPreview), 200)}`);
+        }
+
+        return lines.join('\n');
+      }
+    </script>
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(13,111,115,0.12), transparent 32%),
+          linear-gradient(180deg, #f5f0e7, #ece5da);
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+        color: #251f1c;
+        padding: 24px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      header h1 { font-size: 1.1rem; font-weight: 600; }
+      .header-links { display: flex; gap: 16px; }
+      .header-links a {
+        color: #0d6f73;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .header-links a:hover { text-decoration: underline; }
+      #error {
+        color: #c95a20;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      #diagram {
+        background: rgba(255,251,245,0.82);
+        border: 1px solid rgba(37,31,28,0.12);
+        border-radius: 12px;
+        padding: 24px;
+        overflow: auto;
+      }
+      #diagram svg {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Diagrama de secuencia</h1>
+      <div class="header-links">
+        <a id="flow-link" href="#">Ver flujo</a>
+        <a href="/">Volver al Scouter</a>
+      </div>
+    </header>
+    <p id="error"></p>
+    <div id="diagram"></div>
+    <script>
+      // Set the flow diagram link with same params
+      const flowLink = document.getElementById('flow-link');
+      flowLink.href = '/diagram.html' + location.search;
+    </script>
+  </body>
+</html>

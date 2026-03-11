@@ -1,0 +1,23 @@
+{
+  "name": "agents-mastra",
+  "private": true,
+  "packageManager": "npm@11.6.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "check": "npm run check --workspaces --if-present",
+    "dev:basic": "npm run dev -w weather-basic",
+    "dev:policy": "npm run dev -w weather-policy",
+    "dev:memory": "npm run dev -w weather-memory",
+    "dev:skill": "npm run dev -w weather-skill",
+    "dev:chat-demo": "npm run dev -w weather-chat-demo",
+    "dev:mcp": "node ./scripts/dev-mcp.mjs",
+    "dev:mcp-trace": "npm run dev -w weather-mcp-trace",
+    "dev:dual-agent-eval": "npm run dev -w weather-dual-agent-eval",
+    "dev:mcp-server": "npm run dev -w @agents-mastra/weather-mcp-server",
+    "dev:scouter": "npm run dev -w mastra-scouter"
+  }
+}
