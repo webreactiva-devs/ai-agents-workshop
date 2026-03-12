@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1117" width="980" height="1117" style="background:#0a0e1a">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&amp;display=swap');
+    </style>
+  </defs>
+  <line x1="135" y1="131" x2="135" y2="1007" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="305" y1="115" x2="305" y2="1007" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="475" y1="115" x2="475" y2="1007" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="645" y1="115" x2="645" y2="1007" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <g>
+        <circle cx="135" cy="63" r="7" fill="none" stroke="#34d399" stroke-width="2"/>
+        <line x1="135" y1="70" x2="135" y2="82" stroke="#34d399" stroke-width="2"/>
+        <line x1="127" y1="76" x2="143" y2="76" stroke="#34d399" stroke-width="2"/>
+        <line x1="135" y1="82" x2="129" y2="89" stroke="#34d399" stroke-width="2"/>
+        <line x1="135" y1="82" x2="141" y2="89" stroke="#34d399" stroke-width="2"/>
+      <text x="135" y="123" text-anchor="middle" fill="#34d399" font-size="15" font-weight="600" font-family="monospace">Usuario</text></g><g>
+        <rect x="230" y="65" width="150" height="50" rx="6" fill="#1a2035" stroke="#3d4f7a" stroke-width="1.5"/>
+        <text x="305" y="91" text-anchor="middle" dominant-baseline="middle" fill="#e2e8f0" font-size="15" font-weight="600" font-family="monospace">Lead</text>
+      </g><g>
+        <rect x="400" y="65" width="150" height="50" rx="6" fill="#1a2035" stroke="#3d4f7a" stroke-width="1.5"/>
+        <text x="475" y="91" text-anchor="middle" dominant-baseline="middle" fill="#e2e8f0" font-size="15" font-weight="600" font-family="monospace">Executor</text>
+      </g><g>
+        <rect x="570" y="65" width="150" height="50" rx="6" fill="#1a2035" stroke="#3d4f7a" stroke-width="1.5"/>
+        <text x="645" y="91" text-anchor="middle" dominant-baseline="middle" fill="#e2e8f0" font-size="15" font-weight="600" font-family="monospace">Review</text>
+      </g>
+  <g>
+        <circle cx="135" cy="1015" r="7" fill="none" stroke="#34d399" stroke-width="2"/>
+        <line x1="135" y1="1022" x2="135" y2="1034" stroke="#34d399" stroke-width="2"/>
+        <line x1="127" y1="1028" x2="143" y2="1028" stroke="#34d399" stroke-width="2"/>
+        <line x1="135" y1="1034" x2="129" y2="1041" stroke="#34d399" stroke-width="2"/>
+        <line x1="135" y1="1034" x2="141" y2="1041" stroke="#34d399" stroke-width="2"/>
+      <text x="135" y="1075" text-anchor="middle" fill="#34d399" font-size="15" font-weight="600" font-family="monospace">Usuario</text></g><g>
+        <rect x="230" y="1017" width="150" height="50" rx="6" fill="#1a2035" stroke="#3d4f7a" stroke-width="1.5"/>
+        <text x="305" y="1043" text-anchor="middle" dominant-baseline="middle" fill="#e2e8f0" font-size="15" font-weight="600" font-family="monospace">Lead</text>
+      </g><g>
+        <rect x="400" y="1017" width="150" height="50" rx="6" fill="#1a2035" stroke="#3d4f7a" stroke-width="1.5"/>
+        <text x="475" y="1043" text-anchor="middle" dominant-baseline="middle" fill="#e2e8f0" font-size="15" font-weight="600" font-family="monospace">Executor</text>
+      </g><g>
+        <rect x="570" y="1017" width="150" height="50" rx="6" fill="#1a2035" stroke="#3d4f7a" stroke-width="1.5"/>
+        <text x="645" y="1043" text-anchor="middle" dominant-baseline="middle" fill="#e2e8f0" font-size="15" font-weight="600" font-family="monospace">Review</text>
+      </g>
+  
+      <rect x="227" y="555" width="496" height="322" rx="4" fill="none" stroke="#3d4f7a" stroke-width="1.2" stroke-dasharray="6 3"/>
+      <rect x="227" y="555" width="43" height="20" rx="3" fill="#131829" stroke="#3d4f7a" stroke-width="1"/>
+      <text x="235" y="569" fill="#8892b0" font-size="11" font-weight="700" font-family="monospace">alt</text>
+      <text x="278" y="569" fill="#5a6486" font-size="11" font-family="monospace">[APPROVED]</text>
+    
+          <line x1="227" y1="683" x2="723" y2="683" stroke="#3d4f7a" stroke-width="1" stroke-dasharray="6 3"/>
+          <rect x="227" y="683" width="52" height="20" rx="3" fill="#131829" stroke="#3d4f7a" stroke-width="1"/>
+          <text x="235" y="697" fill="#8892b0" font-size="11" font-weight="700" font-family="monospace">else</text>
+          <text x="287" y="697" fill="#5a6486" font-size="11" font-family="monospace">[CHANGES_REQUESTED]</text>
+        
+      <rect x="227" y="299" width="576" height="578" rx="4" fill="none" stroke="#3d4f7a" stroke-width="1.2" stroke-dasharray="6 3"/>
+      <rect x="227" y="299" width="52" height="20" rx="3" fill="#131829" stroke="#3d4f7a" stroke-width="1"/>
+      <text x="235" y="313" fill="#8892b0" font-size="11" font-weight="700" font-family="monospace">loop</text>
+      <text x="287" y="313" fill="#5a6486" font-size="11" font-family="monospace">[Por cada tarea]</text>
+    
+  
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="0s" dur="0.01s" fill="freeze"/>
+          <line x1="135" y1="145" x2="135" y2="145" stroke="#60a5fa" stroke-width="1.8" >
+            <animate attributeName="x2" from="135" to="305" begin="0s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="305,145 297,140 297,150" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="220" y="133" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            /duo "crear hello world"
+            <animate attributeName="opacity" from="0" to="1" begin="0.18s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.01s" fill="freeze"/>
+          <path d="M 305 194 C 365 194, 365 224, 305 224" fill="none" stroke="#60a5fa" stroke-width="1.8" />
+          <polygon points="305,224 311,218 313,226" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="1.1s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="349" y="214" text-anchor="start" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Crea thread + task-list.md
+            <animate attributeName="opacity" from="0" to="1" begin="0.98s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="1.6s" dur="0.01s" fill="freeze"/>
+          <line x1="305" y1="273" x2="305" y2="273" stroke="#60a5fa" stroke-width="1.8" >
+            <animate attributeName="x2" from="305" to="475" begin="1.6s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="475,273 467,268 467,278" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="1.9000000000000001s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="390" y="261" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Implementa T1
+            <animate attributeName="opacity" from="0" to="1" begin="1.78s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="2.4000000000000004s" dur="0.01s" fill="freeze"/>
+          <path d="M 475 322 C 535 322, 535 352, 475 352" fill="none" stroke="#60a5fa" stroke-width="1.8" />
+          <polygon points="475,352 481,346 483,354" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="2.7s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="519" y="342" text-anchor="start" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Escribe código
+            <animate attributeName="opacity" from="0" to="1" begin="2.5800000000000005s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="3.2s" dur="0.01s" fill="freeze"/>
+          <path d="M 475 386 C 535 386, 535 416, 475 416" fill="none" stroke="#60a5fa" stroke-width="1.8" />
+          <polygon points="475,416 481,410 483,418" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="3.5s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="519" y="406" text-anchor="start" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Actualiza task-list.md → in_review
+            <animate attributeName="opacity" from="0" to="1" begin="3.3800000000000003s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="4s" dur="0.01s" fill="freeze"/>
+          <line x1="475" y1="465" x2="475" y2="465" stroke="#60a5fa" stroke-width="1.8" >
+            <animate attributeName="x2" from="475" to="645" begin="4s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="645,465 637,460 637,470" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="4.3s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="560" y="453" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            executor-to-review.md
+            <animate attributeName="opacity" from="0" to="1" begin="4.18s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="4.800000000000001s" dur="0.01s" fill="freeze"/>
+          <path d="M 645 514 C 705 514, 705 544, 645 544" fill="none" stroke="#60a5fa" stroke-width="1.8" />
+          <polygon points="645,544 651,538 653,546" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="5.1000000000000005s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="689" y="534" text-anchor="start" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Evalúa incremento
+            <animate attributeName="opacity" from="0" to="1" begin="4.98s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="5.6000000000000005s" dur="0.01s" fill="freeze"/>
+          <line x1="645" y1="593" x2="645" y2="593" stroke="#60a5fa" stroke-width="1.8" >
+            <animate attributeName="x2" from="645" to="475" begin="5.6000000000000005s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="475,593 483,588 483,598" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="5.9s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="560" y="581" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            review-to-executor.md (APPROVED)
+            <animate attributeName="opacity" from="0" to="1" begin="5.78s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="6.4s" dur="0.01s" fill="freeze"/>
+          <line x1="475" y1="657" x2="475" y2="657" stroke="#60a5fa" stroke-width="1.8" >
+            <animate attributeName="x2" from="475" to="305" begin="6.4s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="305,657 313,652 313,662" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="6.7s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="390" y="645" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Tarea completada
+            <animate attributeName="opacity" from="0" to="1" begin="6.58s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="7.2s" dur="0.01s" fill="freeze"/>
+          <line x1="645" y1="721" x2="645" y2="721" stroke="#60a5fa" stroke-width="1.8" >
+            <animate attributeName="x2" from="645" to="475" begin="7.2s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="475,721 483,716 483,726" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="7.5s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="560" y="709" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            review-to-executor.md (CHANGES_REQUESTED)
+            <animate attributeName="opacity" from="0" to="1" begin="7.38s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="8s" dur="0.01s" fill="freeze"/>
+          <path d="M 475 770 C 535 770, 535 800, 475 800" fill="none" stroke="#60a5fa" stroke-width="1.8" />
+          <polygon points="475,800 481,794 483,802" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="8.3s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="519" y="790" text-anchor="start" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Corrige
+            <animate attributeName="opacity" from="0" to="1" begin="8.18s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="8.8s" dur="0.01s" fill="freeze"/>
+          <line x1="475" y1="849" x2="475" y2="849" stroke="#60a5fa" stroke-width="1.8" >
+            <animate attributeName="x2" from="475" to="645" begin="8.8s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="645,849 637,844 637,854" fill="#60a5fa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="9.100000000000001s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="560" y="837" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            executor-to-review.md (corregido)
+            <animate attributeName="opacity" from="0" to="1" begin="8.98s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" begin="9.600000000000001s" dur="0.01s" fill="freeze"/>
+          <line x1="305" y1="913" x2="305" y2="913" stroke="#a78bfa" stroke-width="1.8" stroke-dasharray="6 4">
+            <animate attributeName="x2" from="305" to="135" begin="9.600000000000001s" dur="0.6s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+          </line>
+          <polygon points="135,913 143,908 143,918" fill="#a78bfa" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" begin="9.900000000000002s" dur="0.18s" fill="freeze"/>
+          </polygon>
+          <text x="220" y="901" text-anchor="middle" fill="#8892b0" font-size="16" font-family="monospace" opacity="0">
+            Todas las tareas completadas
+            <animate attributeName="opacity" from="0" to="1" begin="9.780000000000001s" dur="0.3s" fill="freeze"/>
+          </text>
+        </g>
+      
+</svg>
