@@ -4,6 +4,8 @@
 
 ![](slides/assets/agents-1.jpg)
 
+> Para contar nuestra historia hemos usado los tebeos de Francisco Ibáñez como homejane a este gran dibujante autor, entre otros, del gran Mortadelo y Filemón.
+
 ## Sobre esta masterclass
 
 Aprende a crear **agentes de IA** desde cero. Desde un LLM aumentado con herramientas hasta arquitecturas multi-agente con evaluación, pasando por políticas, memoria, skills y MCP.

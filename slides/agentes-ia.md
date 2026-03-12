@@ -270,6 +270,7 @@ section.bigtable table td, section.bigtable table th {
 }
 </style>
 
+> Para contar nuestra historia hemos usado los tebeos de Francisco Ibáñez como homejane a este gran dibujante autor, entre otros, del gran Mortadelo y Filemón.
 
 ---
 
