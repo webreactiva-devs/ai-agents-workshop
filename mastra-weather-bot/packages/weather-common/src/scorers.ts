@@ -2,12 +2,29 @@ import { createScorer } from '@mastra/core/evals';
 import { z } from 'zod';
 
 function normalizeText(output: unknown): string {
+  if (typeof output === 'string') return output;
+
   if (Array.isArray(output)) {
-    return output
-      .map(item =>
-        typeof item === 'object' && item && 'content' in item ? String((item as { content: unknown }).content) : String(item),
-      )
-      .join(' ');
+    return output.map(item => normalizeText(item)).join(' ');
+  }
+
+  if (typeof output === 'object' && output !== null) {
+    const obj = output as Record<string, unknown>;
+
+    // Handle { text: "..." }
+    if (typeof obj.text === 'string') return obj.text;
+
+    // Handle { content: { parts: [{ text: "..." }] } }
+    if (obj.content && typeof obj.content === 'object') {
+      const content = obj.content as Record<string, unknown>;
+      if (Array.isArray(content.parts)) {
+        return content.parts.map(p => normalizeText(p)).join(' ');
+      }
+      return normalizeText(content);
+    }
+
+    // Handle { content: "..." }
+    if (typeof obj.content === 'string') return obj.content;
   }
 
   return String(output ?? '');
