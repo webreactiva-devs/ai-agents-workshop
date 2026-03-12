@@ -33,7 +33,7 @@ Aprende a crear **agentes de IA** desde cero. Desde un LLM aumentado con herrami
 - **`mastra-weather-bot/`** — Monorepo con los 6 niveles de agente construidos con [Mastra](https://mastra.ai). Incluye apps progresivas (`weather-basic`, `weather-policy`, `weather-memory`, `weather-skill`, `weather-mcp-trace`, `weather-dual-agent-eval`), paquetes compartidos y un servidor MCP.
 - **`claude-weather-bot/`** — Versión de los agentes usando Claude Code con agentes definidos en Markdown, skills y MCP server.
 - **`slides/`** — Presentación de la masterclass en formato [Marp](https://marp.app/).
-- **`docs/`** — Documentación de referencia sobre arquitectura de agentes.
+- **`docs/`** — Documentación de referencia: [arquitectura genérica](docs/arquitectura-agentes-generica.md), [diagramas](docs/diagramas-arquitectura.md), [guardrails](docs/guardrails.md), [policy](docs/policy.md), [evals/scorers](docs/evals-scorers.md).
 
 ## Slides
 
@@ -41,7 +41,5 @@ Aprende a crear **agentes de IA** desde cero. Desde un LLM aumentado con herrami
 slides/agentes-ia.md
 slides/agentes-ia.html
 ```
-
-Usa [Marp](https://marp.app/) para visualizar las slides.
 
 Hecho con 🧡 para la Comunidad Malandriner
